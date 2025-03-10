@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar"
-import Hero from "../../components/Hero"
-import Features from "../../components/features"
-import CTA from "../../components/CTA"
-import Footer from "../../components/footer"
+import Hero from "../../components/Hero" 
+import CTA from "../../components/CTA" 
+import Features from "@/components/Features"
+import Footer from "@/components/Footer"
 
 export default function Home() {
 
@@ -25,3 +25,4 @@ export default function Home() {
         </div>
     )
 }
+ 

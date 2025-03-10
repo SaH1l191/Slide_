@@ -1,10 +1,17 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
+import { usePathname } from "next/navigation"
 export default function MouseMoveEffect() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
+
+  const pathname = usePathname()
+
+
+
+
+  if (pathname === "/sign-in") return null; //disabled mouse gradient
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY })
