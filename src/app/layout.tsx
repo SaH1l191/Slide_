@@ -4,15 +4,10 @@ import type React from "react"
 import type { Metadata } from "next"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  ClerkProvider
 } from '@clerk/nextjs'
 import { ThemeProvider } from "@/providers/theme-provider"
-import {Toaster} from "sonner"
+import { Toaster } from "sonner"
 
 
 const inter = Inter({ subsets: ["latin"] })
@@ -40,7 +35,7 @@ export default function RootLayout({
           >
             <MouseMoveEffect />
             {children}
-            <Toaster/>
+            <Toaster />
           </ThemeProvider>
 
         </body>

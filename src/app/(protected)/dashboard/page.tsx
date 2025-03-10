@@ -7,3 +7,5 @@ const page = (props: Props) => {
     <div>page</div>
   )
 }
+
+export default page
