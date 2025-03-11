@@ -1,4 +1,3 @@
  
 
-
-Prisma - continue from  sidebar creation 
+Sidebar - mobile layout 

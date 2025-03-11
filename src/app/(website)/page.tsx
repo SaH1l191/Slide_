@@ -1,13 +1,15 @@
-import Navbar from "../../components/Navbar"
-import Hero from "../../components/Hero" 
-import CTA from "../../components/CTA" 
-import Features from "@/components/Features"
-import Footer from "@/components/Footer"
+import Navbar from "@/components/home/Navbar"
+import Hero from "../../components/home/Hero"
+import CTA from "../../components/home/CTA"
+import Features from "@/components/home/Features"
+import Footer from "@/components/home/Footer"
+import MouseMoveEffect from "@/components/home/mouse-move-effect"
 
 export default function Home() {
 
     return (
         <div className="relative min-h-screen">
+            <MouseMoveEffect />
             {/* Background gradients */}
             <div className="pointer-events-none fixed inset-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
@@ -25,4 +27,3 @@ export default function Home() {
         </div>
     )
 }
- 

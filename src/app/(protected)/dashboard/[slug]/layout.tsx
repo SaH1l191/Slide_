@@ -1,4 +1,6 @@
+import Sidebar from '@/components/global/sidebar'
 import React from 'react'
+import Navbar from '@/components/global/navbar/index'
 
 type Props = {
   children: React.ReactNode
@@ -6,16 +8,24 @@ type Props = {
 }
 //slug is automatically received
 const Layout = ({ children, params }: Props) => {
-  console.log(children, params)
+  // console.log( params.slug)
 
 
   return (
-    <div> 
-      {/* <Sidebar /> */}
-
-      {children}
+    <div className='p-3'>
+      <Sidebar slug={params.slug} />
+      <div className=' lg:ml-[250px] 
+      lg:pl-10 
+      lg:py-5 
+      flex 
+      flex-col 
+      overflow-auto'>
+        <Navbar slug={params.slug} />
+        {children}
+      </div>
+    
     </div>
   )
 }
 
-export default Layout
+export default Layout 
