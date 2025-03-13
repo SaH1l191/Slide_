@@ -32,10 +32,10 @@ const Navbar = ({ slug }: Props) => {
     return (
         currentPage && <div className='flex flex-col'>
             <div className='flex gap-x-3 lg:gap-x-5 justify-end'>
-                <span className='lg:hidden flex items-center flex-1 
-                gap-x-2 '>
-
-                    <Sheet trigger={<Menu />} side='left'
+                
+                {/* <span className='lg:hidden flex items-center flex-1 
+                gap-x-2 '> */}
+                    {/* <Sheet trigger={<Menu />} side='left'
                         className='lg:hidden'>
                         <div className='flex flex-col gap-y-5 w-full h-full p-3 bg-[#171717] 
                             bg-opacity-90 bg-clip-padding backdrop:blur-3xl '>
@@ -71,8 +71,9 @@ const Navbar = ({ slug }: Props) => {
                                 </div>
                             </SubscriptionPlan>
                         </div>
-                    </Sheet>
-                </span>
+                    </Sheet> */}
+                {/* </span> */}
+
                 <Search/>
                 <CreateAutomation/>
                 <Notifications/>

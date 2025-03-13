@@ -15,6 +15,7 @@ const Items = ({ page, slug }: Props) => {
             className={cn('capitalize flex gap-x-2 rounded-full p-3',
                 page === item.label && 'bg-[#171717]',
                 page === slug && item.label === 'home' ? 'bg-[#171717]' : 'text-[#9B9CA0]'
+                //by default the home is selected (color applied )
             )}>
             {item.icon}
             {item.label}
@@ -22,4 +23,4 @@ const Items = ({ page, slug }: Props) => {
     ))
 }
 
-export default Items
+export default Items 

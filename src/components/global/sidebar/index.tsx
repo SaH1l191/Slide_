@@ -17,9 +17,9 @@ const Sidebar = ({ slug }: Props) => {
 
   const pathname = usePathname()
   const path = pathname.split('/')
-  let page = path[path.length - 1]
-  // console.log(page, "paghe") 
-  console.log("slug from sidebar", slug)
+  let page = path[path.length - 1] 
+  console.log(page, "paghe")  
+  // console.log("slug from sidebar", slug)
 
   return (
     <div className='w-[250px] border-2  fixed left-0 

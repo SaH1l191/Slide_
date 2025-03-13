@@ -8,9 +8,9 @@ type Props = {
 }
 //slug is automatically received
 const Layout = ({ children, params }: Props) => {
-  // console.log( params.slug)
+  console.log("from layout=> slug=>", params.slug) //1
 
-
+ 
   return (
     <div className='p-3'>
       <Sidebar slug={params.slug} />
@@ -23,7 +23,7 @@ const Layout = ({ children, params }: Props) => {
         <Navbar slug={params.slug} />
         {children}
       </div>
-    
+
     </div>
   )
 }
