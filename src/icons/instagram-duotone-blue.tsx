@@ -20,8 +20,8 @@ export const InstagramDuoToneBlue = () => {
                     y2="40"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3352CC" />
-                    <stop offset="1" stop-color="#1C2D70" />
+                    <stop  />
+                    <stop offset="1" />
                 </linearGradient>
             </defs>
         </svg>

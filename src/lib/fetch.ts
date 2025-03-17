@@ -1,3 +1,4 @@
+import { QueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 
 export const refreshToken = async (token: string) => {
@@ -7,6 +8,11 @@ export const refreshToken = async (token: string) => {
 
   return refresh_token.data
 }
+
+// {
+//   "access_token": "new_access_token_value",
+//   "expires_in": 3600
+// }
 
 export const sendDM = async (
   userId: string,
@@ -91,3 +97,5 @@ export const generateTokens = async (code: string) => {
     return long_token.data
   }
 }
+
+

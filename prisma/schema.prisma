@@ -25,9 +25,9 @@ model User {
   firstname    String?        @unique
   lastname     String?        @unique
   createdAt    DateTime       @default(now())
-  Subscription Subscription?
+  subscription  Subscription?
   automations  Automation[]
-  Integrations Integrations[]
+  integrations Integrations[]
 }
 
 enum SUBSCRIPTION_PLAN {

@@ -12,8 +12,8 @@ const Billing = (props: Props) => {
         label="FREE"
       />
       <PaymentCard
-        current={'FREE'}
-        label="PRO"
+        current={'PRO'}
+        label="FREE"
       />
     </div>
   )

@@ -1,6 +1,5 @@
 import AutomationListComponent from '@/components/global/automation-list/automationlist'
 import CreateAutomation from '@/components/global/create-automation'
-import GradientButton from '@/components/global/create-automation-button/button'
 import { Check } from 'lucide-react'
 import React from 'react'
 
@@ -9,7 +8,7 @@ type Props = {}
 const page = (props: Props) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
-      <div className="lg:col-span-4"><AutomationListComponent /></div>
+      <div className="lg:col-span-4"><AutomationListComponent/></div>
       <div className="lg:col-span-2">
         <div className="flex flex-col rounded-xl bg-background-80 gap-y-6 p-5 border-[1px] overflow-hidden border-in-active">
           <div>
@@ -22,7 +21,7 @@ const page = (props: Props) => {
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
-                className="flex items-start justify-between"
+                className="flex items-start justify-between "
               >
                 <div className="flex flex-col">
                   <h3 className="font-medium">

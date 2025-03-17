@@ -11,7 +11,7 @@ const Search = (props: Props) => {
 
       <Input
         placeholder="Search by name, email or status"
-        className=" border-none focus:outline-none  
+        className="  border-none focus:outline-none  
          flex-1"
       />
       <SearchIcon className='hover:cursor-pointer' color="#3352CC" />

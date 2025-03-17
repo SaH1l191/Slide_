@@ -48,7 +48,7 @@ const PaymentCard = ({ current, label, landing }: Props) => {
                         Smart AI
                     </span>
                 ) : (
-                    <p className="font-bold mt-2 text-text-secondary">Standard</p>
+                    <p className="font-bold mt-2 mb-5 text-text-secondary">Standard</p>
                 )}
                 {label === 'PRO' ? (
                     <p className="mb-2">
@@ -85,7 +85,7 @@ const PaymentCard = ({ current, label, landing }: Props) => {
                     </Button>
                 ) : (
                     <Button
-                        className="rounded-full mt-5 bg-background-80 text-white hover:text-background-80"
+                        className="rounded-full mt-20 py-6 items-center justify-center bg-background-80 text-white hover:text-background-80"
                         disabled={label === current}
                     >
                         {label === current

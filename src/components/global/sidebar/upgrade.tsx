@@ -17,9 +17,7 @@ const UpgradeCard = (props: Props) => {
             </p>
 
             {/* payment button  */}
-            <Button className='bg-gradient-to-br  from-[#766aa5]
-    via-[#9434E6] to-[#804b83]  font-bold 
-    text-white rounded-full'>
+            <Button className='bg-gradient-to-br  from-[#766aa5] via-[#9434E6] to-[#804b83]  font-bold text-white rounded-full'>
                 Upgrade
             </Button>
         </div>

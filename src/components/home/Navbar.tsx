@@ -2,13 +2,12 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Github, User } from "lucide-react"
-import ClerkAuthState from "./global/clerk-auth-state"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur ">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold">XTR</span>
@@ -32,7 +31,7 @@ export default function Navbar() {
                 <Button size="sm">Dashboard</Button>
               </Link>
             </SignedIn>
- 
+
             <SignedOut>
               <Link href={`/sign-in`} >
                 <Button size="sm">Sign In</Button>
@@ -43,11 +42,11 @@ export default function Navbar() {
 
           {/* <ClerkAuthState /> */}
           <SignedIn>
-                <UserButton>
-                    <UserButton.UserProfileLink label='Dashboard' url={`/dashboard`}
-                        labelIcon={<User size={16} />} />
-                </UserButton>
-            </SignedIn>
+            <UserButton>
+              <UserButton.UserProfileLink label='Dashboard' url={`/dashboard`}
+                labelIcon={<User size={16} />} />
+            </UserButton>
+          </SignedIn>
         </div>
       </div>
     </header>

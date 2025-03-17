@@ -20,22 +20,22 @@ type Props = {
     slug: string
 }
 
-const Navbar = ({ slug }: Props) => {
+const InfoBar = ({ slug }: Props) => {
     const pathname = usePathname()
     const path = pathname.split('/')
     let page = path[path.length - 1]
     // console.log(page, "paghe") 
-    console.log("slug from sidebar", slug)
+    // console.log("slug from sidebar", slug)
 
     const currentPage = PAGE_BREAD_CRUMBS.includes(page) || page == slug
-
+    // console.log(currentPage, "current page")
     return (
         currentPage && <div className='flex flex-col'>
             <div className='flex gap-x-3 lg:gap-x-5 justify-end'>
-                
+
                 {/* <span className='lg:hidden flex items-center flex-1 
                 gap-x-2 '> */}
-                    {/* <Sheet trigger={<Menu />} side='left'
+                {/* <Sheet trigger={<Menu />} side='left'
                         className='lg:hidden'>
                         <div className='flex flex-col gap-y-5 w-full h-full p-3 bg-[#171717] 
                             bg-opacity-90 bg-clip-padding backdrop:blur-3xl '>
@@ -74,13 +74,13 @@ const Navbar = ({ slug }: Props) => {
                     </Sheet> */}
                 {/* </span> */}
 
-                <Search/>
-                <CreateAutomation/>
-                <Notifications/>
+                <Search />
+                <CreateAutomation />
+                <Notifications />
             </div>
-            <MainBreadCrumb page={page == slug ? 'Home' : page} slug={slug}/>
+            <MainBreadCrumb page={page == slug ? 'Home' : page} slug={slug} />
         </div>
     )
 }
 
-export default Navbar
+export default InfoBar

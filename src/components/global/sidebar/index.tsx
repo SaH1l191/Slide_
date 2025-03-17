@@ -30,6 +30,7 @@ const Sidebar = ({ slug }: Props) => {
       bg-opacity-90 bg-clip-padding backdrop:blur-3xl '>
 
         <div className='flex gap-x-2 items-center p-5 justify-center'>
+          
           <Image src={'/log.jpg'} alt='image'
             className='bg-transparent rounded-full '
             width={80} height={100} />
