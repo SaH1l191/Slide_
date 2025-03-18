@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { AUTOMATION_TRIGGERS } from '@/constants/automation'
 import Loader from '../../loader/page'
 import ThenAction from './then-action'
+import { useTriggers } from '@/hooks/use-automation'
 
 
 type Props = {
@@ -16,16 +17,24 @@ type Props = {
 }
 
 const Trigger = ({ id }: Props) => {
-  // const { types, onSetTrigger, onSaveTrigger, isPending } = useTriggers(id)
+  const { types, onSetTrigger, onSaveTrigger, isPending } = useTriggers(id)
   const { data } = useQueryAutomation(id)
 
   if (data?.data && data?.data?.trigger.length > 0) {
     return (
       <div className="flex flex-col ga-y-6 items-center">
         <ActiveTrigger
-          type={data.data.trigger[0].type}
-          keywords={data.data.keywords}
+          type={"COMMENT"}
+          keywords={[
+            {
+              id: 'sadfdsfadsf',
+              word: 'getstarted',
+              'automationId': id,
+            }
+          ]}
         />
+        {/* keywords={data.data.keywords}  */}
+
 
         {data?.data?.trigger.length > 1 && (
           <>
@@ -39,14 +48,19 @@ const Trigger = ({ id }: Props) => {
               />
             </div>
             <ActiveTrigger
-              type={data.data.trigger[1].type}
-              keywords={data.data.keywords}
-            />
+              type={"COMMENT"}
+              keywords={[
+                {
+                  id: 'sadfdsfadsf',
+                  word: 'getstarted',
+                  'automationId': id,
+                }
+              ]} />
           </>
         )}
-        <ThenAction/>
+        <ThenAction id={id} />
 
-        {/* {!data.data.listener && <ThenAction id={id} />} */}
+        {!data.data.listener && <ThenAction id={id} />}
       </div>
     )
   }
@@ -57,12 +71,12 @@ const Trigger = ({ id }: Props) => {
         {AUTOMATION_TRIGGERS.map((trigger) => (
           <div
             key={trigger.id}
-            // onClick={() => onSetTrigger(trigger.type)}
+            onClick={() => onSetTrigger(trigger.type)}
             className={cn(
               'hover:opacity-80 text-white rounded-xl flex cursor-pointer flex-col p-3 gap-y-2',
-              // !types?.find((t) => t === trigger.type)
-              //   ? 'bg-background-80'
-              //   : 'bg-gradient-to-br from-[#3352CC] font-medium to-[#1C2D70]'
+              !types?.find((t) => t === trigger.type)
+                ? 'bg-background-80'
+                : 'bg-gradient-to-br from-[#3352CC] font-medium to-[#1C2D70]'
             )}
           >
             <div className="flex gap-x-2 items-center">
@@ -73,16 +87,16 @@ const Trigger = ({ id }: Props) => {
           </div>
         ))}
         {/* <Keywords id={id} /> */}
-        <Button
-          // onClick={onSaveTrigger}
+        {/* <Button
+          onClick={onSaveTrigger}
           disabled={true}
           className="bg-gradient-to-br from-[#3352CC] font-medium text-white to-[#1C2D70]"
         >
           <Loader state={false}>Create Trigger</Loader>
-        </Button>
+        </Button> */}
       </div>
     </TriggerButton>
   )
-}
 
+}
 export default Trigger

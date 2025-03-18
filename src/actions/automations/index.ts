@@ -2,7 +2,7 @@
 import { currentUser } from "@clerk/nextjs/server"
 //explicity mention the use server directive just for the server action (compulsroy )
 import { onCurrentUser } from "../user"
-import { addListener, createAutomation, findAutomation, getAutomations, updateAutomation } from './queries'
+import { addListener, addTrigger, createAutomation, findAutomation, getAutomations, updateAutomation } from './queries'
 
 
 export const createAutomations = async (id?: string) => {
@@ -88,4 +88,18 @@ export const saveListener = async (
         return { status: 500, data: 'Internal server error' }
 
     }
+}
+
+export const saveTrigger = async (automationId:string , trigger : string[]) => {
+    await currentUser()
+    try{
+        const create = await addTrigger(automationId,trigger)
+        if(create) return {status : 200 , data : 'Trigger added successfully'}
+        if(!create) return {staus : 404 , data : 'Cant save Trigger'}
+
+    }   
+    catch(error){
+        
+    }
+
 }

@@ -6,7 +6,7 @@ import Items from './items'
 import { Separator } from '../../ui/separator'
 import ClerkAuthState from '../clerk-auth-state'
 import { HelpDuoToneWhite } from '@/icons'
-import SubscriptionPlan from '../subscription-plan'
+import {SubscriptionPlan} from '../subscription-plan'
 import UpgradeCard from './upgrade'
 
 type Props = {
