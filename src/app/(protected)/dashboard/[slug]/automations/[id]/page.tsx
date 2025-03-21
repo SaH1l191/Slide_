@@ -10,6 +10,8 @@ import {
   QueryClient,
 } from '@tanstack/react-query'
 import { PrefetchUserAutomation } from '@/react-query/prefetch'
+import ThenNode from '@/components/global/automations/then/node'
+import PostNode from '@/components/global/automations/post/node'
 
 type Props = {
   params: { id: string }
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 const page = async ({ params }: Props) => {
 
-  console.log("logging prop id from automation id ",params.id)
+  console.log("logging prop id from automation id ", params.id)
   //ssr implementation 
   const query = new QueryClient() //server side component 
   await PrefetchUserAutomation(query, params.id)
@@ -46,12 +48,15 @@ const page = async ({ params }: Props) => {
           </div>
           <Trigger id={params.id} />
         </div>
+        <ThenNode id={params.id} />
+        <PostNode id={params.id} />
+
       </div>
     </HydrationBoundary>
 
 
-//when clikcing on this automation/[id] the query(ie automation name) will be fetched with the default 
-//html page returned from the server . saving the need to make  the additional API requests.
+    //when clikcing on this automation/[id] the query(ie automation name) will be fetched with the default 
+    //html page returned from the server . saving the need to make  the additional API requests.
   )
 }
 

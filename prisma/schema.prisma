@@ -113,11 +113,12 @@ model Dms {
 enum MEDIATYPE {
   IMAGE
   VIDEO
+  CAROSEL_ALBUM
 }
 
 model Post {
   id           String      @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  postId       String
+  postid       String
   caption      String?
   media        String
   mediaType    MEDIATYPE   @default(IMAGE)

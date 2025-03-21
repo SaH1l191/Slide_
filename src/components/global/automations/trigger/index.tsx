@@ -5,12 +5,12 @@ import ActiveTrigger from './active'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import TriggerButton from '../trigger-button/index'
-import { Button } from '@/components/ui/button'
 import { AUTOMATION_TRIGGERS } from '@/constants/automation'
-import Loader from '../../loader/page'
 import ThenAction from './then-action'
 import { useTriggers } from '@/hooks/use-automation'
-
+import Keywords from './keywords'
+import Loader from '../../loader/page'
+import { Button } from '@/components/ui/button'
 
 type Props = {
   id: string
@@ -22,16 +22,10 @@ const Trigger = ({ id }: Props) => {
 
   if (data?.data && data?.data?.trigger.length > 0) {
     return (
-      <div className="flex flex-col ga-y-6 items-center">
+      <div className="flex flex-col gap-y-6 items-center">
         <ActiveTrigger
-          type={"COMMENT"}
-          keywords={[
-            {
-              id: 'sadfdsfadsf',
-              word: 'getstarted',
-              'automationId': id,
-            }
-          ]}
+          type={data.data.trigger[0].type}
+          keywords={data.data.keywords}
         />
         {/* keywords={data.data.keywords}  */}
 
@@ -48,18 +42,11 @@ const Trigger = ({ id }: Props) => {
               />
             </div>
             <ActiveTrigger
-              type={"COMMENT"}
-              keywords={[
-                {
-                  id: 'sadfdsfadsf',
-                  word: 'getstarted',
-                  'automationId': id,
-                }
-              ]} />
+              type={data.data.trigger[0].type}
+              keywords={data.data.keywords}
+            />
           </>
         )}
-        <ThenAction id={id} />
-
         {!data.data.listener && <ThenAction id={id} />}
       </div>
     )
@@ -86,14 +73,14 @@ const Trigger = ({ id }: Props) => {
             <p className="text-sm font-light">{trigger.description}</p>
           </div>
         ))}
-        {/* <Keywords id={id} /> */}
-        {/* <Button
+        <Keywords id={id} />
+        <Button
           onClick={onSaveTrigger}
-          disabled={true}
+          disabled={types?.length === 0}
           className="bg-gradient-to-br from-[#3352CC] font-medium text-white to-[#1C2D70]"
         >
-          <Loader state={false}>Create Trigger</Loader>
-        </Button> */}
+          <Loader state={isPending}>Create Trigger</Loader>
+        </Button>
       </div>
     </TriggerButton>
   )

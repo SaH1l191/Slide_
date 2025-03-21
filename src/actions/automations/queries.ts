@@ -1,5 +1,7 @@
 'use server'
 import { client } from "@/lib/prisma"
+import { useQuery } from "@tanstack/react-query"
+import { getAutomationInfo, getProfilePosts, } from "./index"
 
 
 export const createAutomation = async (clerkId: string, id?: string) => {
@@ -126,5 +128,90 @@ export const addTrigger = async (automationId: string, trigger: string[]) => {
         }
       }
     }
+  })
+}
+
+
+export const addKeyWord = async (automationId: string, keyword: string) => {
+  return client.automation.update({
+    where: {
+      id: automationId,
+    },
+    data: {
+      keywords: {
+        create: {
+          word: keyword,
+        },
+      },
+    },
+  })
+}
+
+
+export const deleteKeywoord = async (id: string) => {
+
+  return await client.keyword.delete({
+    where: {
+      id
+    }
+
+  })
+}
+export const useQueryAutomation = (id: string) => {
+  return useQuery({
+    queryKey: ['automation-info'],
+    queryFn: () => getAutomationInfo(id),
+  })
+}
+export const useQueryAutomationPosts = () => {
+  const fetchPosts = async () => await getProfilePosts()
+  return useQuery({
+    queryKey: ['instagram-media'],
+    queryFn: fetchPosts,
+  })
+}
+
+
+export const findUser = async (clerkId: string) => {
+  return await client.user.findUnique({
+    where: {
+      clerkId,
+    },
+    include: {
+      subscription: true,
+      integrations: {
+        select: {
+          id: true,
+          token: true,
+          expiresAt: true,
+          name: true,
+        },
+      },
+    },
+  })
+}
+
+
+
+export const addPost = async (
+  automationId: string,
+  posts: {
+    postid: string
+    caption?: string
+    media: string
+    mediaType: 'IMAGE' | 'VIDEO' | 'CAROSEL_ALBUM'
+  }[]
+) => {
+  return await client.automation.update({
+    where: {
+      id: automationId,
+    },
+    data: {
+      posts: {
+        createMany: {
+          data: posts,
+        },
+      },
+    },
   })
 }

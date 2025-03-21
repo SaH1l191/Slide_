@@ -27,6 +27,10 @@ export default function RootLayout({
     //  to fix the next hydration issue due to clerk Providre => suppressHydrationWarning
     <ClerkProvider>
       <html lang="en" className="dark">
+      <title>XTR-Automate Faster!</title>
+      <head>
+      <link rel="icon" href="/IG.png" type="image/png" />
+      </head>
         <body suppressHydrationWarning className={`${jakarta.className} D bg-background text-foreground antialiased`}>
           <ThemeProvider
             attribute="class"
