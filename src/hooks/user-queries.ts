@@ -29,3 +29,4 @@ export const useQueryAutomation = (id: string) => {
     queryFn: () => getAutomationInfo(id),
   })
 }
+ 
