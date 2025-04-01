@@ -2,23 +2,23 @@ import { Brain, Cloud, Shield, Zap } from "lucide-react"
 
 const features = [
   {
-    name: "Lorem",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Automated Outreach",
+    description: "Automate client outreach with targeted messaging based on keywords or AI-driven triggers.",
     icon: Brain,
   },
   {
-    name: "Lorem",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "AI-Powered Conversations",
+    description: "Let AI take over conversations on auto-pilot, offering seamless support and engagement.",
     icon: Cloud,
   },
   {
-    name: "Lorem",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Secure Messaging",
+    description: "Ensure secure and private interactions with encrypted direct messages and data privacy.",
     icon: Shield,
   },
   {
-    name: "Lorem",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Fast Automation",
+    description: "Fire automations instantly, reaching thousands of clients within seconds for maximum impact.",
     icon: Zap,
   },
 ]
@@ -27,9 +27,9 @@ export default function Features() {
   return (
     <section className="container space-y-16 py-24 md:py-32">
       <div className="mx-auto max-w-[58rem] text-center">
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Lorem</h2>
+        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Key Features</h2>
         <p className="mt-4 text-muted-foreground sm:text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Discover how Slide helps you engage, convert, and support your customers effortlessly with automation and AI.
         </p>
       </div>
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">

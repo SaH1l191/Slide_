@@ -6,63 +6,65 @@ export default function Footer() {
     <footer className="border-t">
       <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
         <div className="flex-1 space-y-4">
-          <h2 className="font-bold">Lorem</h2>
-          <p className="text-sm text-muted-foreground">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h2 className="font-bold">About Slide</h2>
+          <p className="text-sm text-muted-foreground">
+            Slide is a powerful messaging automation platform designed to help businesses engage, convert, and support their customers effortlessly.
+          </p>
         </div>
         <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Lorem</h3>
+            <h3 className="text-sm font-medium">Product</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/ai-analytics" className="text-muted-foreground transition-colors hover:text-primary">
-                  Lorem
+                <Link href="/features" className="text-muted-foreground transition-colors hover:text-primary">
+                  Features
                 </Link>
               </li>
               <li>
-                <Link href="/cloud-services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Lorem
+                <Link href="/pricing" className="text-muted-foreground transition-colors hover:text-primary">
+                  Pricing
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Lorem</h3>
+            <h3 className="text-sm font-medium">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">
-                  Lorem
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link href="/careers" className="text-muted-foreground transition-colors hover:text-primary">
-                  Lorem
+                  Careers
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Lorem</h3>
+            <h3 className="text-sm font-medium">Follow Us</h3>
             <div className="flex space-x-4">
               <Link
                 href="https://github.com/amanesoft"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
                 <Github className="h-5 w-5" />
-                <span className="sr-only">Lorem</span>
+                <span className="sr-only">GitHub</span>
               </Link>
               <Link
                 href="https://twitter.com/amanesoft"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
                 <Twitter className="h-5 w-5" />
-                <span className="sr-only">Lorem</span>
+                <span className="sr-only">Twitter</span>
               </Link>
               <Link
                 href="https://linkedin.com/company/amanesoft"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">Lorem</span>
+                <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
           </div>
@@ -70,7 +72,7 @@ export default function Footer() {
       </div>
       <div className="container border-t py-6">
         <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Lorem, Inc. All rights reserved.
+          © {new Date().getFullYear()} Slide, Inc. All rights reserved.
         </p>
       </div>
     </footer>
