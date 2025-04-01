@@ -74,6 +74,7 @@ const Trigger = ({ id }: Props) => {
           </div>
         ))}
         <Keywords id={id} />
+
         <Button
           onClick={onSaveTrigger}
           disabled={types?.length === 0}
@@ -81,6 +82,7 @@ const Trigger = ({ id }: Props) => {
         >
           <Loader state={isPending}>Create Trigger</Loader>
         </Button>
+
       </div>
     </TriggerButton>
   )

@@ -106,7 +106,7 @@ model Dms {
   automationId String?     @db.Uuid
   createdAt    DateTime    @default(now())
   senderId     String?
-  receiver     String?
+  reciever     String?
   message      String?
 }
 

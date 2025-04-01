@@ -121,7 +121,6 @@ export const useKeyword = (id: string) => {
     if (e.key === 'Enter') {
       mutate({ keyword })
       setKeyword('')
-
     }
   }
 
@@ -135,6 +134,7 @@ export const useKeyword = (id: string) => {
     keyword, onValueChange, onKeyPress, deleteMutation
   }
 }
+
 export const useAutomationPosts = (id: string) => {
   const [posts, setPosts] = useState<
     {
