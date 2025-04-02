@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     //  to fix the next hydration issue due to clerk Providre => suppressHydrationWarning
-    <ClerkProvider>
+    <ClerkProvider  > 
       <html lang="en" className="dark">
       <title>XTR-Automate Faster!</title>
       <head>
@@ -46,7 +46,7 @@ export default function RootLayout({
           </ThemeProvider>
 
         </body>
-      </html>
+      </html> 
     </ClerkProvider>
   )
 }

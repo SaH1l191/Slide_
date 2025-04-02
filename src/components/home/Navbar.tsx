@@ -24,7 +24,7 @@ export default function Navbar() {
         </nav>
         <div className="flex items-center space-x-4">
 
-          <Link href={`/sign-in`} >
+          <Link href={`/dashboard`} >
             <SignedIn>
               <Link href="/dashboard">
                 <Button size="sm">Dashboard</Button>

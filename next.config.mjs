@@ -4,7 +4,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname:"scontent-iad3-2.cdninstagram.com"
+        hostname: 'scontent-iad3-2.cdninstagram.com', // Instagram domain
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com', // Unsplash domain
       },
     ],
   },

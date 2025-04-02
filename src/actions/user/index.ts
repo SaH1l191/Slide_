@@ -15,8 +15,7 @@ export const onCurrentUser = async () => {
 }
 
 export const onBoardUser = async () => {
-    const user = await onCurrentUser()
-    console.log("logging user details from client(currentUser)", user)
+    const user = await onCurrentUser() 
     try {
         const found = await findUser(user.id) //checks in DB exists or not (prisma)
         if (found) {
@@ -48,7 +47,7 @@ export const onBoardUser = async () => {
                 status: 200,
                 data: {
                     firstname: found.firstname,
-                    lastname: found.lastname
+                    lastname: found.lastname,
                 }
             }
         }
@@ -64,7 +63,24 @@ export const onBoardUser = async () => {
         return { status: 500 }
     }
 }
-
+export const userFormStatus = async () => {
+    const user = await onCurrentUser()
+    try {
+        const found = await findUser(user.id)
+        if (user) {
+            return {
+                status: 200,
+                data: {
+                    formFilled: found!.formFilled
+                }
+            }
+        }
+        return { status: 404 }
+    }
+    catch (error) {
+        return { status: 500 }
+    } 
+}
 export const onUserInfo = async () => {
     const user = await onCurrentUser()
     try {
@@ -85,11 +101,11 @@ export const onSubscribe = async (session_id: string) => {
             const subscribed = await updateSubscription(user.id, {
                 customerId: session.customer as string, plan: 'PRO'
             })
-            if(subscribed) return { status: 200}
-            return {status : 401}
+            if (subscribed) return { status: 200 }
+            return { status: 401 }
         }
-        return {status : 404}
-    } 
+        return { status: 404 }
+    }
     catch (error) {
         return { status: 500 }
     }

@@ -6,7 +6,7 @@ type Props = {}
 const page = async (props: Props) => {
 
   const user = await onBoardUser()
-
+  console.log('logging onBoardUser,', user )
 
   //both checks for existing user or new user (check server actions for that ) 
 

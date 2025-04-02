@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function Hero() {
   return (
@@ -22,6 +23,15 @@ export default function Hero() {
         <Button variant="outline" size="lg">
           Learn More
         </Button>
+      </div>
+      <div className="w-full max-w-3xl mx-auto mt-12">
+        <Image
+          src="/Ig-creators.png"
+          width={440}
+          height={220}
+          alt="Instagram creators using Slide"
+          className="mx-auto object-contain w-full"
+        />
       </div>
     </section>
   )

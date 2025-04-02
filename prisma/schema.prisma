@@ -12,7 +12,7 @@ generator client {
 //bun x prisma db push => commit changes to db
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://neondb_owner:npg_HLSqM0xti9AE@ep-old-cake-a89m78q4-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
 }
 
 //ran CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -28,6 +28,7 @@ model User {
   subscription  Subscription?
   automations  Automation[]
   integrations Integrations[]
+  formFilled   Boolean        @default(false)
 }
 
 enum SUBSCRIPTION_PLAN {

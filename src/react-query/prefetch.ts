@@ -15,6 +15,8 @@ const prefetch = async (
         staleTime: 60000,
     })
 }
+ 
+
 
 
 export const PrefetchUserProfile = async (client: QueryClient) => {
@@ -31,5 +33,7 @@ export const PrefetchUserAutomation = async (client: QueryClient
     return await prefetch(client,
         () => getAutomationInfo(automationId), "automation-info")
 }
-
-
+ 
+ 
+ 
+ 
